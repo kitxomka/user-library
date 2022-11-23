@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { isFormValid } from '../utils/user.utils'
 
 
 const initialState = {
@@ -9,7 +10,6 @@ const initialState = {
   deleteModal: {
     isVisible: false,
     userId: null,
-    // TODO: refactor
     userName: {}
   },
   editModal: {
@@ -45,7 +45,6 @@ export const userSlice = createSlice({
     setEditUserModal: (state, action) => {
       state.isEditMode = true;
       state.editSaveDisabled = true;
-      console.log('action.payload.isVisible', action.payload.isVisible);
 
       if (action.payload.isVisible) {
         state.editModal = {
@@ -59,9 +58,8 @@ export const userSlice = createSlice({
           street: action.payload.userDetails.location.street.name
         }
       } else {
-        state.editModal = {
-          isVisible: action.payload.isVisible
-        }
+        state.isEditMode = false;
+        state.editModal = { ...initialState.editModal, isVisible: action.payload.isVisible };
       }
     },
     changeUserDetails: (state, action) => {
@@ -73,7 +71,6 @@ export const userSlice = createSlice({
     },
     userDetailsUpdate: (state, action) => {
       const userToUpdate = state.usersList.find(user => user.login.uuid == state.editModal.userId);
-      // console.log('userToUpdate', JSON.parse(JSON.stringify(userToUpdate)) );
       userToUpdate.name.first = state.editModal.firstName;
       userToUpdate.name.last = state.editModal.lastName;
       userToUpdate.email = state.editModal.userEmail;
@@ -89,27 +86,6 @@ export const userSlice = createSlice({
     }
   }
 });
-
-const isFormValid = (editModal) => {
-    return (
-      !isValueValid(editModal.firstName) ||
-      !isValueValid(editModal.lastName) ||
-      !isValueValid(editModal.country) ||
-      !isValueValid(editModal.city) ||
-      !isValueValid(editModal.street) ||
-      !isEmailValid(editModal.userEmail)
-    );
-};
-
-const isEmailValid = (value) => {
-  let regex =
-    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-  return regex.test(value);
-};
-
-const isValueValid = (value) => {
-  return value.length > 2;
-};
 
 export const { fetchUsers, updateFilterBy, setEditMode, removeUserFromList, setDeleteModal, setEditUserModal, changeUserDetails, setEditModal, userDetailsUpdate, setEditSaveDisabled } = userSlice.actions;
 export default userSlice.reducer;

@@ -1,15 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { changeUserDetails, setEditSaveDisabled } from "../features/userSlice";
-import { Box, Typography, TextField, Button } from "@mui/material";
+import { changeUserDetails } from "../features/userSlice";
+import { Box, TextField, Button } from "@mui/material";
 
 const UserAddEditForm = () => {
   const isEditMode = useSelector((state) => state.user.isEditMode);
-  const state = useSelector((state) => state);
-  // console.log('state', state);
   const editModal = useSelector((state) => state.user.editModal);
-  const [error, setError] = useState(false);
-
   const dispatch = useDispatch();
 
   return (
@@ -123,17 +119,12 @@ const UserAddEditForm = () => {
   );
 };
 
-
 const handleChange = (e, fieldName, dispatch) => {
-  console.log(e.target.value);
-  const value = e.target.value;
-  dispatch(changeUserDetails({ value, fieldName }));
+  dispatch(changeUserDetails({ value: e.target.value, fieldName }));
 };
 
 const handleEmailChange = (e, dispatch) => {
-  console.log(e.target.value);
-  const value = e.target.value;
-  dispatch(changeUserDetails({ value, fieldName: "userEmail" }));
+  dispatch(changeUserDetails({ value: e.target.value, fieldName: "userEmail" }));
 };
 
 const handleImageChange = (e) => {

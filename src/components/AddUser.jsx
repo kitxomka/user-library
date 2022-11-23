@@ -1,17 +1,8 @@
-import React, {useEffect} from "react";
-// import { useSelector, useDispatch } from "react-redux";
-// import { useNavigate } from "react-router-dom";
-// import { setEditMode } from "../features/userSlice";
-import Form from "./UserAddEditForm";
-
-import { Box, Typography, TextField, Button } from "@mui/material";
+import React from "react";
+import UserAddEditForm from "./UserAddEditForm";
+import { Box, Typography } from "@mui/material";
 
 const AddUser = () => {
-//   const editMode = useSelector((state) => state.user.editMode);
-//   const dispatch = useDispatch();
-//   const navigate = useNavigate();
-
-
   return (
     <Box className="add-user-wrapper">
       <Box className="title">
@@ -20,9 +11,8 @@ const AddUser = () => {
         </Typography>
       </Box>
       <Box className="add-form">
-        <Form />
+        <UserAddEditForm />
       </Box>
-      
     </Box>
   );
 };

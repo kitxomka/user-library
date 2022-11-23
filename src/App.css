@@ -47,9 +47,9 @@
   margin: 40px;
   width: 20%;
   display: inline-block;
-  height: 500px;
+  height: 400px;
   vertical-align: top;
-  border: 1px solid #ccc;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 /* Users */
@@ -97,3 +97,4 @@
   margin: auto;
   width: 30%;
 }
+

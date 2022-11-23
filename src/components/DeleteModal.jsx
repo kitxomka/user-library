@@ -4,8 +4,6 @@ import { removeUserFromList } from "../features/userSlice";
 import { useSelector, useDispatch } from "react-redux";
 
 import { Typography, Button, Modal, Box } from "@mui/material";
-import CloseIcon from "@mui/icons-material/Close";
-import CheckIcon from "@mui/icons-material/Check";
 
 const DeleteModal = () => {
   const userName = useSelector((state) => state.user.deleteModal.userName);
@@ -27,19 +25,18 @@ const DeleteModal = () => {
             <Button
               size="small"
               variant="contained"
-              color="error"
               onClick={() => dispatch(setDeleteModal({ isVisible: false }))}
             >
-              <CloseIcon />
+              Cancel
             </Button>
             <Button
-              //   style={{paddingLeft: '5px'}}
+              style={{marginLeft: '0.5rem'}}
               size="small"
               variant="contained"
-              color="success"
+              color="error"
               onClick={() => dispatch(removeUserFromList())}
             >
-              <CheckIcon />
+              Delete
             </Button>
           </Box>
         </Box>
@@ -60,4 +57,5 @@ const style = {
   px: 4,
   pb: 3,
 };
+
 export default DeleteModal;

@@ -2,13 +2,9 @@ import React from "react";
 import {
   setEditUserModal,
   userDetailsUpdate,
-  setEditSaveDisabled,
 } from "../features/userSlice";
 import { useSelector, useDispatch } from "react-redux";
-
 import { Typography, Button, Modal, Box } from "@mui/material";
-import CloseIcon from "@mui/icons-material/Close";
-import CheckIcon from "@mui/icons-material/Check";
 import UserAddEditForm from "./UserAddEditForm";
 
 const EditUserModal = () => {
@@ -33,20 +29,19 @@ const EditUserModal = () => {
             <Button
               size="small"
               variant="contained"
-              color="error"
               onClick={() => dispatch(setEditUserModal({ isVisible: false }))}
             >
-              <CloseIcon />
+              Cancel
             </Button>
             <Button
-              //   style={{paddingLeft: '5px'}}
+              style={{marginLeft: '0.5rem'}}
               disabled={editSaveDisabled}
               size="small"
               variant="contained"
               color="success"
               onClick={() => dispatch(userDetailsUpdate())}
             >
-              <CheckIcon />
+              Save
             </Button>
           </Box>
         </Box>
@@ -62,9 +57,10 @@ const style = {
   transform: "translate(-50%, -50%)",
   width: 400,
   bgcolor: "background.paper",
-  border: "2px solid #000",
+  boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
   pt: 2,
   px: 4,
   pb: 3,
 };
+
 export default EditUserModal;
