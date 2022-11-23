@@ -53,7 +53,7 @@ const Users = () => {
   ));
 
   return (
-    <Box className="users-wrapper">
+    <Box>
       {isEditModalVisible && <EditUserModal />}
       {isDeleteModalVisible && <DeleteModal />}
       <div className="users-list">

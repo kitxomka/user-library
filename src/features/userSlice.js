@@ -63,7 +63,6 @@ export const userSlice = createSlice({
       }
     },
     changeUserDetails: (state, action) => {
-      debugger;
       let fieldName = action.payload.fieldName;
       const newEditModalState = state.editModal;
       newEditModalState[fieldName] = action.payload.value;

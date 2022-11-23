@@ -44,8 +44,9 @@
 
 .btns-wrapper {
   margin:auto;
-  width: 50%;
   padding-top: 2rem;
+  text-align: center;
+  display: inline-block !important;
 
 }
 .delBtn {
@@ -104,8 +105,20 @@
 @media only screen and (max-width: 1055px) {
   .oneUser {
     margin: 40px;
-    width: 50%;
+    width: 90%;
     height: 21rem;
 
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .users-wrapper {
+    width: 100%;
+  }
+
+  .oneUser {
+    margin: 40px;
+    width: 90vw;
+    height: 21rem;
   }
 }

@@ -15,7 +15,7 @@ const Search = () => {
   };
 
   return (
-    <Box className="search-wraper" sx={{ width: 500, maxWidth: "100%" }}>
+    <Box className="search-wraper" sx={{ width: 500, maxWidth: "90%" }}>
       <TextField
         fullWidth
         label="Search..."
