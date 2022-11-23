@@ -12,7 +12,7 @@ const fetchAllUsers = async (dispatch, setLoading) => {
   try {
     const allData = await axios.get(`https://randomuser.me/api/?results=10`);
     // console.log("allData", allData);
-    if (allData.status == 200) {
+    if (allData.status === 200) {
       // console.log(allData.data.results);
 
       const usersList = allData.data.results;
@@ -34,7 +34,7 @@ const Main = () => {
   useEffect(() => {
     setLoading(true);
     fetchAllUsers(dispatch, setLoading);
-  }, []);
+  }, [dispatch]);
 
   const pageTitle =
     filterBy.length === 0 ? (

@@ -21,7 +21,7 @@ const Users = () => {
 
   useEffect(() => {
     filterUserList(usersList, filterBy);
-  }, [filterBy]);
+  }, [usersList, filterBy]);
 
   useEffect(() => {
     setFilteredList(usersList);

@@ -47,7 +47,7 @@ const UserAddEditForm = () => {
           id="outlined-basic"
           label="Image"
           variant="outlined"
-          onChange={handleImageChange}
+          onChange={()=>{}}
           fullWidth
           required
         />
@@ -125,17 +125,6 @@ const handleChange = (e, fieldName, dispatch) => {
 
 const handleEmailChange = (e, dispatch) => {
   dispatch(changeUserDetails({ value: e.target.value, fieldName: "userEmail" }));
-};
-
-const handleImageChange = (e) => {
-  const value = e.target.value;
-  // setUser({ ...user, image: value });
-  // const isImageUrlVaid = validUrl(value);
-  // if (isImageUrlVaid) {
-  //   setImage(value);
-  // } else {
-  //   console.log("not valid url");
-  // }
 };
 
 const handleSave = () => {};

@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   setEditUserModal,
   setDeleteModal
@@ -10,24 +10,21 @@ import {
   Typography,
   CardContent,
   Button,
-  CardActions,
-  Modal,
-  Box,
+  CardActions
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 
 const User = ({ userDetails }) => {
-  const showModal = useSelector((state) => state.user.editModal.isVisible);
   const dispatch = useDispatch();
 
   return (
     <Card key={userDetails.login.uuid} className="oneUser">
-      <CardHeader
+        <CardHeader
         title={userDetails.name.first + " " + userDetails.name.last}
       />
       <div className="bg">
-        <img src={userDetails.picture.medium} />
+        <img src={userDetails.picture.medium} alt="user" />
       </div>
       <CardContent>
         <Typography variant="body2" color="text.secondary">

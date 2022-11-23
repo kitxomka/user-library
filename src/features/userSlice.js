@@ -71,7 +71,7 @@ export const userSlice = createSlice({
       state.editModal = JSON.parse(JSON.stringify(newEditModalState));
     },
     userDetailsUpdate: (state, action) => {
-      const userToUpdate = state.usersList.find(user => user.login.uuid == state.editModal.userId);
+      const userToUpdate = state.usersList.find(user => user.login.uuid === state.editModal.userId);
       userToUpdate.name.first = state.editModal.firstName;
       userToUpdate.name.last = state.editModal.lastName;
       userToUpdate.email = state.editModal.userEmail;
