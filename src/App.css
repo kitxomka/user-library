@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700&display=swap');
+
+
+* {
+  font-family: "Nunito", sans-serif !important;
+}
+
+/* Shared */
+
+.title {
+  text-align: center;
+}
+
+
+/* NavBar  */
+
+.nav-bar-text a, .nav-bar-btn a{
+  text-decoration: none;
+  color: white;
+}
+
+/* Loading */
+.loading-wrapper {
+  margin: 30px auto;
+}
+
+/* Search */
+
+.search-wraper {
+  margin-top: 20px;
+  margin: 20px auto;
+}
+
+/* Main */
+
+.main-wrapper {
+  text-align: center;
+}
+
+.users-wrapper {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+.oneUser {
+  margin: 40px;
+  width: 20%;
+  display: inline-block;
+  height: 500px;
+  vertical-align: top;
+  border: 1px solid #ccc;
+}
+
+/* Users */
+
+.btns-wrapper {
+  margin: 10px auto;
+  width: 50%;
+}
+
+/* Modal */
+.modal-wrapper {
+  text-align: center;
+}
+.title-modal-wrapper, .modal-title{
+  margin: 12px !important;
+}
+
+
+
+/* Add User */
+
+.add-user-wrapper {
+  margin-top: 20px;
+}
+
+.user-inputs-container {
+  width: 100%;
+  margin: 10px auto;
+}
+
+.name-conteiner, .image-conteiner, .email-conteiner, .location-conteiner, .btn {
+  width: 60%;
+  /* border: 1px solid black; */
+  margin: 20px auto;
+  text-align: center;
+}
+
+.user-f-name, .user-l-name, .user-email, .user-image, .country, .city, .street {
+  margin-top: 20px !important;
+}
+
+/* Form */
+
+.add-form {
+  margin: auto;
+  width: 30%;
+}
