@@ -17,8 +17,8 @@ const UserAddEditForm = () => {
     >
       <TextField
         className="user-f-name"
-        error={editModal.firstName.length < 3}
-        helperText={!editModal.firstName.length ? "First name is required" : ""}
+        error={isEditMode && editModal.firstName.length < 3}
+        helperText={isEditMode && !editModal.firstName.length ? "First name is required" : ""}
         value={isEditMode ? editModal.firstName : ""}
         name={editModal.firstName}
         id="outlined-basic"
@@ -30,8 +30,8 @@ const UserAddEditForm = () => {
       />
       <TextField
         className="user-l-name"
-        error={editModal.lastName.length < 3}
-        helperText={!editModal.lastName.length ? "Last name is required" : ""}
+        error={isEditMode && editModal.lastName.length < 3}
+        helperText={isEditMode && !editModal.lastName.length ? "Last name is required" : ""}
         value={isEditMode ? editModal.lastName : ""}
         name={editModal.lastName}
         id="outlined-basic"
@@ -55,9 +55,9 @@ const UserAddEditForm = () => {
 
       <TextField
         className="user-email"
-        error={editModal.userEmail.length === 0}
+        error={isEditMode && editModal.userEmail.length === 0}
         helperText={
-          !editModal.userEmail.length ? "Valid email is required" : ""
+          isEditMode && !editModal.userEmail.length ? "Valid email is required" : ""
         }
         value={isEditMode ? editModal.userEmail : ""}
         name={editModal.userEmail}
@@ -71,8 +71,8 @@ const UserAddEditForm = () => {
 
       <TextField
         className="country"
-        error={editModal.country.length < 3}
-        helperText={!editModal.country.length ? "Country is required" : ""}
+        error={isEditMode && editModal.country.length < 3}
+        helperText={isEditMode && !editModal.country.length ? "Country is required" : ""}
         value={isEditMode ? editModal.country : ""}
         name={editModal.country}
         id="outlined-basic"
@@ -84,8 +84,8 @@ const UserAddEditForm = () => {
       />
       <TextField
         className="city"
-        error={editModal.city.length < 3}
-        helperText={!editModal.city.length ? "City is required" : ""}
+        error={isEditMode && editModal.city.length < 3}
+        helperText={isEditMode && !editModal.city.length ? "City is required" : ""}
         value={isEditMode ? editModal.city : ""}
         name={editModal.city}
         id="outlined-basic"
@@ -97,8 +97,8 @@ const UserAddEditForm = () => {
       />
       <TextField
         className="street"
-        error={editModal.street.length < 3}
-        helperText={!editModal.street.length ? "Street is required" : ""}
+        error={isEditMode && editModal.street.length < 3}
+        helperText={isEditMode && !editModal.street.length ? "Street is required" : ""}
         value={isEditMode ? editModal.street : ""}
         name={editModal.street}
         id="outlined-basic"

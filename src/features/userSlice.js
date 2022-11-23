@@ -63,11 +63,12 @@ export const userSlice = createSlice({
       }
     },
     changeUserDetails: (state, action) => {
+      debugger;
       let fieldName = action.payload.fieldName;
       const newEditModalState = state.editModal;
       newEditModalState[fieldName] = action.payload.value;
       state.editSaveDisabled = isFormValid(newEditModalState);
-      state.editModal = newEditModalState;
+      state.editModal = JSON.parse(JSON.stringify(newEditModalState));
     },
     userDetailsUpdate: (state, action) => {
       const userToUpdate = state.usersList.find(user => user.login.uuid == state.editModal.userId);
